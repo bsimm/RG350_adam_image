@@ -1,0 +1,38 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            bc \
+            p7zip-full \
+            squashfs-tools \
+            dosfstools \
+            e2fsprogs \
+            util-linux
+
+      - name: Build
+        run: ./build.sh
+
+      - name: Upload images
+        uses: actions/upload-artifact@v4
+        with:
+          name: adam-images
+          path: releases/*.img.*
+          retention-days: 30
