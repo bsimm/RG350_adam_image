@@ -3,9 +3,9 @@
 # BEGIN PARAMETER ZONE
 ## ODbeta params
 ODBETA_DOWNLOAD_PLAN="A"        # "A": Direct download; "B": Artifact from GHAction
-ODBETA_VERSION=2022-02-13       # ODbeta version to install. It should correspond with direct download or GHArtifact
+ODBETA_VERSION=2022-09-22       # ODbeta version to install. It should correspond with direct download or GHArtifact
 ### For plan "A"
-ODBETA_DIR_URL=http://od.abstraction.se/opendingux/26145a93f2e17d0df86ae20b7af455ea155e169c
+ODBETA_DIR_URL=https://github.com/OpenDingux/buildroot/releases/download/od-2022.09.22
 ### For plan "B"
 ODBETA_ARTIFACT_ID=287825131    # ID of `update-gcw0` artifact in last workflow execution of `opendingux`
                                 # branch in https://github.com/OpenDingux/buildroot repository
